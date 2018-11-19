@@ -158,7 +158,7 @@ jQuery(document).ready(function ($) {
       Name: "SportsLock",
       ShortDescription: "A new take on daily fantasy sports. Xamarin Android application built for a Chicago Startup",
       Description: "A new take on daily fantasy sports. Xamarin Android application built for a Chicago Startup",
-      images: ["img/projects/sportslock/slone.png", "img/projects/sportslock/slTwo.png", "img/projects/sportslock/slThree.png", "img/projects/sportslock/slFour.png"],
+      images: ["img/projects/sportslock/slOne.png", "img/projects/sportslock/slTwo.png", "img/projects/sportslock/slThree.png", "img/projects/sportslock/slFour.png"],
       TagNames: ["Xamarin", "C#", "Android", "Azure", "XAML", "Sketch"],
       TagColors: ["code", "code", "code", "database", "design", "design"],
     },
