@@ -1,6 +1,8 @@
 .skills {
+    display: block;
     width: 100%;
     margin: auto;
+
 
 }
 
@@ -8,9 +10,11 @@
     display: inline-block;
     position: relative;
     top: 0px;
+    left: 25px;
+    right: 25px;
     padding: 1em 2em;
     background: #e0e0e0;
-    margin: 1em 0.5em;
+    margin: 1em 2em;
     transition: 0.5s;
     width: 200px;
     text-align: center;
