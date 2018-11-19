@@ -1,4 +1,5 @@
 .modal {
+    position: center;
     display: none;
     position: fixed;
     z-index: 1;
