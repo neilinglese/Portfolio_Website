@@ -100,20 +100,4 @@
   
     transform: rotate(45deg);
 }
-.badges{
 
-    width: 100%;
-    margin: auto;
-    display: inline-block;
-    text-align: center;
-    align-content: center;
-  
-}
-.badges img{
-   
-
-    width: 200px;
-
-    height: auto;
-    padding: 10px;
-}

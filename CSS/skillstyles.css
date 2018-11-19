@@ -1,6 +1,7 @@
 .skills {
-    width: 70%;
+    width: 100%;
     margin: auto;
+
 }
 
 .SkillGrid {
@@ -11,6 +12,8 @@
     background: #e0e0e0;
     margin: 1em 0.5em;
     transition: 0.5s;
+    width: 200px;
+    text-align: center;
 }
 
 .SkillGrid:hover {

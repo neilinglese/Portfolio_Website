@@ -24,9 +24,9 @@
     background: #fefff9;
     color: #363636;
     text-decoration: none;
-    -moz-box-shadow: rgba(0, 0, 0, 0.19) 0 0 8px 0;
-    -webkit-box-shadow: rgba(0, 0, 0, 0.19) 0 0 8px 0;
-    box-shadow: rgba(0, 0, 0, 0.19) 0 0 8px 0;
+    -moz-box-shadow: rgba(0, 0, 0, 0.5) 0 0 8px 0;
+    -webkit-box-shadow: rgba(0, 0, 0, 0.5) 0 0 8px 0;
+    box-shadow: rgba(0, 0, 0, 0.5) 0 0 8px 0;
     -moz-border-radius: 4px;
     -webkit-border-radius: 4px;
     border-radius: 4px;
@@ -44,7 +44,7 @@
 @media (min-width:481px) {
     /* portrait e-readers (Nook/Kindle), smaller tablets @ 600 or @ 640 wide. */
     .card {
-        max-width: 400px;
+        max-width: 300px;
         margin-right: 20px;
         margin-bottom: 20px;
     }
@@ -53,7 +53,7 @@
 @media (min-width:641px) {
     /* portrait tablets, portrait iPad, landscape e-readers, landscape 800x480 or 854x480 phones */
     .card {
-        max-width: 500px;
+        max-width: 300px;
         margin-right: 20px;
         margin-bottom: 20px;
     }
@@ -62,7 +62,7 @@
 @media (min-width:961px) {
     /* tablet, landscape iPad, lo-res laptops ands desktops */
     .card {
-        max-width: 500px;
+        max-width: 300px;
         margin-right: 20px;
         margin-bottom: 20px;
     }
@@ -71,7 +71,7 @@
 @media (min-width:1025px) {
     /* big landscape tablets, laptops, and desktops */
     .card {
-        max-width: 600px;
+        max-width: 300px;
         margin-right: 20px;
         margin-bottom: 20px;
     }
@@ -114,7 +114,11 @@
 }
 
 .card .card-title {
-    background: rgba(12, 214, 181, 0.85);
+    background: #24C6DC;  /* fallback for old browsers */
+    background: -webkit-linear-gradient(to right, #514A9D, #24C6DC);  /* Chrome 10-25, Safari 5.1-6 */
+    background: linear-gradient(to right, #514A9D, #24C6DC); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+                                            
+
     padding: 3.5% 0 2.5% 0;
     color: white;
     font-family: 'Roboto Condensed', sans-serif;
@@ -122,6 +126,7 @@
     position: absolute;
     bottom: 0;
     width: 100%;
+    text-align: center;
 }
 
 .card .card-title h3 {
@@ -164,7 +169,11 @@
 
 .card:hover .card-title,
 .card:focus .card-title {
-    background: rgba(163, 36, 221, 0.95);
+    background: #ff00cc;  /* fallback for old browsers */
+background: -webkit-linear-gradient(to right, #333399, #ff00cc);  /* Chrome 10-25, Safari 5.1-6 */
+background: linear-gradient(to right, #333399, #ff00cc); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+
+    
 }
 
 .card:hover .card-meta,

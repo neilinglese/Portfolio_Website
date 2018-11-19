@@ -4,9 +4,6 @@ var projects = [
         images: [
             "img/MainPage.png",
             "img/TourPoints.png"
-        ],
-        AvailableOn: [
-
         ]
      },
      { 
@@ -23,9 +20,6 @@ var projects = [
         images: [
             "img/MainPage.png",
             "img/TourPoints.png"
-        ],
-        AvailableOn: [
-            "img/badges"
         ]
     },
     { 

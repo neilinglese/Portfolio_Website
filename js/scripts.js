@@ -156,12 +156,11 @@ jQuery(document).ready(function ($) {
 
   var projects = [{
       Name: "SportsLock",
-      ShortDescription: "A new take on daily fantasy sports. Xamarin Android application built for Chicago Startup",
-      Description: "A new take on daily fantasy sports. Xamarin Android application built for Chicago Startup",
+      ShortDescription: "A new take on daily fantasy sports. Xamarin Android application built for a Chicago Startup",
+      Description: "A new take on daily fantasy sports. Xamarin Android application built for a Chicago Startup",
       images: ["img/projects/sportslock/slone.png", "img/projects/sportslock/slTwo.png", "img/projects/sportslock/slThree.png", "img/projects/sportslock/slFour.png"],
       TagNames: ["Xamarin", "C#", "Android", "Azure", "XAML", "Sketch"],
       TagColors: ["code", "code", "code", "database", "design", "design"],
-      AvailableOn: []
     },
     {
       Name: "Rhythm Rain",
@@ -170,10 +169,6 @@ jQuery(document).ready(function ($) {
       images: ["img/projects/rhythmrain/GameOne.png", "img/projects/rhythmrain/GameTwo.png", "img/projects/rhythmrain/GameThree.png"],
       TagNames: ["C#", "UNITY", ".NET", "Photoshop"],
       TagColors: ["code", "code", "code", "design"],
-      AvailableOn: [
-        "img/badges/Appstore.png",
-        "img/badges/Playstore.png"
-      ]
     },
     {
       Name: "View Chicago",
@@ -182,9 +177,6 @@ jQuery(document).ready(function ($) {
       images: ["img/projects/viewchicago/vcOne.png", "img/projects/viewchicago/vcTwo.png", "img/projects/viewchicago/vcThree.png", "img/projects/viewchicago/vcFour.png"],
       TagNames: ["Angular", "Javascript", "HTML", "JSON", "CSS"],
       TagColors: ["code", "code", "code", "database", "design"],
-      AvailableOn: [
-        "img/badges/Website.png"
-      ]
     },
     {
       Name: "Monologues",
@@ -193,14 +185,26 @@ jQuery(document).ready(function ($) {
       images: ["img/projects/monologues/mOne.png", "img/projects/monologues/mTwo.png", "img/projects/monologues/mThree.png", "img/projects/monologues/mFour.png", "img/projects/monologues/mFive.png"],
       TagNames: ["Ionic", "Angular", "HTML", "CSS"],
       TagColors: ["code", "code", "code", "design"],
-      AvailableOn: [
-        "img/badges/Appstore.png",
-        "img/badges/Playstore.png"
-       ]
     },
 
   ];
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
   var cards = document.getElementById('cards');
 
   projects.forEach(element => {
@@ -222,7 +226,6 @@ jQuery(document).ready(function ($) {
     card.appendChild(cardHeader);
     card.appendChild(cardSummary);
     card.onclick = function () {
-      $('body').css('overflow', 'hidden');
       openModal(projects.indexOf(element));
     };
     cards.appendChild(card);
@@ -258,58 +261,32 @@ jQuery(document).ready(function ($) {
       test.alt = "projectimg";
       tdiv.appendChild(test);
       innerwrapper.appendChild(tdiv);
-
-
-
-
     });
 
     var modalskills = document.getElementById('modalskills');
     while (modalskills.firstChild) {
       modalskills.removeChild(modalskills.firstChild);
     }
-    var y = 0;
+    //var y = 0;
  
     projects[x].TagNames.forEach(element => {
       var tdiv = document.createElement("div");
       tdiv.className = "SkillGrid";
       tdiv.innerText = element;
-      tdiv.classList.add(projects[x].TagColors[y]);
-      y++;
+      tdiv.classList.add(projects[x].TagColors[x]);
+      //y++;
       modalskills.appendChild(tdiv);
-    });
-
-    var ydiv = document.createElement("div");
-    ydiv.className = "badges";
-    
-    projects[x].AvailableOn.forEach(element => {
-      console.log(element);
-      // var tdiv = document.createElement("div");
-
-      var badge = document.createElement("img");
-      badge.src = element;
-      ydiv.appendChild(badge);
-      modalskills.appendChild(ydiv);
     });
   }
 
 
 
-  $('.modal').swipeleft(function() { 
-    inWrap.animate({
-      left: '0%'
-    }, 300, function () {
-      inWrap.css('left', '-100%');
-      $('.slide').first().before($('.slide').last());
-    });
-}).swiperight(function() { 
-  inWrap.animate({
-    left: '-200%'
-  }, 300, function () {
-    inWrap.css('left', '-100%');
-    $('.slide').last().after($('.slide').first());
-  });
-});
+
+
+
+
+
+
 
   $('.prev').on('click', function () {
     inWrap.animate({
@@ -328,12 +305,10 @@ jQuery(document).ready(function ($) {
     });
   });
   function closeModal() {
-    $('body').css('overflow', 'auto');
     modal.style.display = "none";
   }
   function outsideClick(e) {
     if (e.target == modal) {
-      $('body').css('overflow', 'auto');
       modal.style.display = "none";
     }
   }
