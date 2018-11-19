@@ -244,7 +244,7 @@ jQuery(document).ready(function ($) {
   var innerwrapper = document.getElementById("innerwrapper");
 
   function openModal(x) {
-    $('#window').center();
+
     modal.style.display = "block";
     var title = document.getElementById('modaltitle');
     var description = document.getElementById('modaldescription');
@@ -284,12 +284,7 @@ jQuery(document).ready(function ($) {
   }
 
 
-  jQuery.fn.center = function () {
-    this.css("position","absolute");
-    this.css("top", ( $(window).height() - this.height() ) / 2+$(window).scrollTop() + "px");
-    this.css("left", ( $(window).width() - this.width() ) / 2+$(window).scrollLeft() + "px");
-    return this;
-};
+
 
 
 
