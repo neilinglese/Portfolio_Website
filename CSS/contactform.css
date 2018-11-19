@@ -96,7 +96,7 @@
 
 @MEDIA(min-width: 1200px) {
     .contactWrapper {
-        display: grid;
+        /* display: grid; */
         grid-template-columns: 1fr 2fr;
         text-align: center;
     }
