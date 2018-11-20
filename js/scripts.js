@@ -244,43 +244,43 @@ jQuery(document).ready(function ($) {
   var innerwrapper = document.getElementById("innerwrapper");
 
   function openModal(x) {
+    $('.md-modal').addClass('md-show');
+    // modal.style.display = "block";
+    // var title = document.getElementById('modaltitle');
+    // var description = document.getElementById('modaldescription');
 
-    modal.style.display = "block";
-    var title = document.getElementById('modaltitle');
-    var description = document.getElementById('modaldescription');
+    // title.innerText = projects[x].Name;
+    // description.innerText = projects[x].Description;
 
-    title.innerText = projects[x].Name;
-    description.innerText = projects[x].Description;
-
-    while (innerwrapper.firstChild) {
-      innerwrapper.removeChild(innerwrapper.firstChild);
-    }
+    // while (innerwrapper.firstChild) {
+    //   innerwrapper.removeChild(innerwrapper.firstChild);
+    // }
 
 
-    projects[x].images.forEach(element => {
-      var tdiv = document.createElement("div");
-      tdiv.className = "slide";
-      var test = document.createElement("img");
-      test.src = element;
-      test.alt = "projectimg";
-      tdiv.appendChild(test);
-      innerwrapper.appendChild(tdiv);
-    });
+    // projects[x].images.forEach(element => {
+    //   var tdiv = document.createElement("div");
+    //   tdiv.className = "slide";
+    //   var test = document.createElement("img");
+    //   test.src = element;
+    //   test.alt = "projectimg";
+    //   tdiv.appendChild(test);
+    //   innerwrapper.appendChild(tdiv);
+    // });
 
-    var modalskills = document.getElementById('modalskills');
-    while (modalskills.firstChild) {
-      modalskills.removeChild(modalskills.firstChild);
-    }
-    //var y = 0;
+    // var modalskills = document.getElementById('modalskills');
+    // while (modalskills.firstChild) {
+    //   modalskills.removeChild(modalskills.firstChild);
+    // }
+    // //var y = 0;
  
-    projects[x].TagNames.forEach(element => {
-      var tdiv = document.createElement("div");
-      tdiv.className = "SkillGrid";
-      tdiv.innerText = element;
-      tdiv.classList.add(projects[x].TagColors[x]);
-      //y++;
-      modalskills.appendChild(tdiv);
-    });
+    // projects[x].TagNames.forEach(element => {
+    //   var tdiv = document.createElement("div");
+    //   tdiv.className = "SkillGrid";
+    //   tdiv.innerText = element;
+    //   tdiv.classList.add(projects[x].TagColors[x]);
+    //   //y++;
+    //   modalskills.appendChild(tdiv);
+    // });
   }
 
 
@@ -317,4 +317,18 @@ jQuery(document).ready(function ($) {
       modal.style.display = "none";
     }
   }
+});
+
+
+
+$(function () {
+  
+  $('.md-trigger').on('click', function() {
+    $('.md-modal').addClass('md-show');
+  });
+  
+  $('.md-close').on('click', function() {
+    $('.md-modal').removeClass('md-show');
+  });
+  
 });
