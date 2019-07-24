@@ -1,61 +1,26 @@
-var images = [
+AOS.init();
 
-  {
-      Location: "../images/portfolio/sportslock/slOne.png",
-      Title: "Salties at Westmont BBQ Fest",
-  },
-  {
-    Location: "../images/portfolio/sportslock/slTwo.png",
-    Title: "The Salties",
-  },
-  {
-    Location: "../images/portfolio/sportslock/slThree.png",
-    Title: "",
-  },
-  {
-    Location: "../images/portfolio/sportslock/slFour.png",
-    Title: "",
-  },
+//#region Nav Bar Handlers
+var navBar = document.getElementById('navBar');
+var menuIcon = document.getElementById('menuIcon');
+var nav = document.getElementById('nav');
+var navLink = document.getElementsByClassName('navLink');
+
+navBar.addEventListener('click', function () {
+    menuIcon.classList.toggle('is-clicked');
+    navBar.classList.toggle('menu-is-open');
+    nav.classList.toggle('is-visible');
+});
 
 
-
-];
-
-
-
-
-// images.forEach(element => {
-//     console.log(element);
-//     var galleryItem = document.createElement('div');
-//     galleryItem.classList.add('column');
-//     galleryItem.classList.add('is-one-third');
-//     galleryItem.classList.add('is-full-mobile');
-//     var galleryLink = document.createElement('a');
-//     galleryLink.classList.add('bpImage');
-//     galleryLink.href = element.Location;
-//     galleryLink.title = element.Title;
-
-//     galleryItem.appendChild(galleryLink);
-
-//     var galContent = document.createElement('div');
-//     galContent.className = 'gallery-item';
-
-//     var galImage = document.createElement('img');
-//     galImage.className = 'gallery-image';
-//     galImage.src = element.Location;
-//     galContent.appendChild(galImage);
-
-
-
-
-//     galleryLink.appendChild(galContent);
-
-//     photoFragment.appendChild(galleryItem);
-// });
-
-// photoGallery.appendChild(photoFragment);
+for (let i = 0; i < navLink.length; i++) {
+    navLink[i].addEventListener('click', function () {
+        menuIcon.classList.toggle('is-clicked');
+        navBar.classList.toggle('menu-is-open');
+        nav.classList.toggle('is-visible');
+    });
+}
 //#endregion
-//#region Blue Imp Gallery
 blueimp.Gallery.prototype.options.toggleControlsOnReturn = false;
 blueimp.Gallery.prototype.options.toggleControlsOnSlideClick = false;
 
