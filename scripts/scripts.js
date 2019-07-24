@@ -1,45 +1,161 @@
-var performances = [
+var images = [
 
-    {
-        title: 'Banana',
-        href: '../images/portfolio/sportslock/slOne.png',
-        type: 'image/jpeg',
-        thumbnail: 'https://example.org/thumbnails/banana.jpg'
-      },
-      {
-        title: 'Banana',
-        href: '../images/portfolio/sportslock/sltwo.png',
-        type: 'image/jpeg',
-        thumbnail: 'https://example.org/thumbnails/banana.jpg'
-      },
-      {
-        title: 'Banana',
-        href: '../images/portfolio/sportslock/slFour.png',
-        type: 'image/jpeg',
-        thumbnail: 'https://example.org/thumbnails/banana.jpg'
-      },
-      // {
-      //   title: 'Banana',
-      //   href: '../img/chicagoFour.jpg',
-      //   type: 'image/jpeg',
-      //   thumbnail: 'https://example.org/thumbnails/banana.jpg'
-      // },
+  {
+      Location: "../images/portfolio/sportslock/slOne.png",
+      Title: "Salties at Westmont BBQ Fest",
+  },
+  {
+    Location: "../images/portfolio/sportslock/slTwo.png",
+    Title: "The Salties",
+  },
+  {
+    Location: "../images/portfolio/sportslock/slThree.png",
+    Title: "",
+  },
+  {
+    Location: "../images/portfolio/sportslock/slFour.png",
+    Title: "",
+  },
+
+
 
 ];
 
 
+
+
+// images.forEach(element => {
+//     console.log(element);
+//     var galleryItem = document.createElement('div');
+//     galleryItem.classList.add('column');
+//     galleryItem.classList.add('is-one-third');
+//     galleryItem.classList.add('is-full-mobile');
+//     var galleryLink = document.createElement('a');
+//     galleryLink.classList.add('bpImage');
+//     galleryLink.href = element.Location;
+//     galleryLink.title = element.Title;
+
+//     galleryItem.appendChild(galleryLink);
+
+//     var galContent = document.createElement('div');
+//     galContent.className = 'gallery-item';
+
+//     var galImage = document.createElement('img');
+//     galImage.className = 'gallery-image';
+//     galImage.src = element.Location;
+//     galContent.appendChild(galImage);
+
+
+
+
+//     galleryLink.appendChild(galContent);
+
+//     photoFragment.appendChild(galleryItem);
+// });
+
+// photoGallery.appendChild(photoFragment);
+//#endregion
+//#region Blue Imp Gallery
 blueimp.Gallery.prototype.options.toggleControlsOnReturn = false;
 blueimp.Gallery.prototype.options.toggleControlsOnSlideClick = false;
 
-blueimp.Gallery( performances, {
-    container: '#blueimp-image-carousel',
-    carousel: true,
-    continuous: true,
-    startSlideshow: false,
-    youTubeClickToPlay: false
+document.getElementById('photoGallery').onclick = function (event) {
+  event = event || window.event;
+  var parent = getClosest(event.target, '.bpImage');
+  var target = event.target || event.srcElement,
+      link = target.src ? parent : parent,
+      options = {
+          index: link,
+          event: event
+      },
+      links = this.getElementsByTagName('a');
+  console.log(parent);
+  blueimp.Gallery(links, options);
+};
+var getClosest = function (elem, selector) {
+
+  // Element.matches() polyfill
+  if (!Element.prototype.matches) {
+      Element.prototype.matches =
+          Element.prototype.matchesSelector ||
+          Element.prototype.mozMatchesSelector ||
+          Element.prototype.msMatchesSelector ||
+          Element.prototype.oMatchesSelector ||
+          Element.prototype.webkitMatchesSelector ||
+          function (s) {
+              var matches = (this.document || this.ownerDocument).querySelectorAll(s),
+                  i = matches.length;
+              while (--i >= 0 && matches.item(i) !== this) {}
+              return i > -1;
+          };
+  }
+
+  // Get the closest matching element
+  for (; elem && elem !== document; elem = elem.parentNode) {
+      if (elem.matches(selector)) return elem;
+  }
+  return null;
+
+};
+
+function openModal(string){
+  var photoGallery = document.getElementById('photoGallery');
+  while (photoGallery.firstChild) {
+    photoGallery.removeChild(photoGallery.firstChild);
+}
+var photoFragment = document.createDocumentFragment();
+
+  console.log(string);
+  projects[string].images.forEach(element => {
+    console.log(element);
+    var galleryItem = document.createElement('div');
+    galleryItem.classList.add('column');
+    galleryItem.classList.add('is-one-third');
+    galleryItem.classList.add('is-full-mobile');
+    var galleryLink = document.createElement('a');
+    galleryLink.classList.add('bpImage');
+    galleryLink.href = element;
+
+
+    galleryItem.appendChild(galleryLink);
+
+    var galContent = document.createElement('div');
+    galContent.className = 'gallery-item';
+
+    var galImage = document.createElement('img');
+    galImage.className = 'gallery-image';
+    galImage.src = element;
+    galContent.appendChild(galImage);
+
+
+
+
+    galleryLink.appendChild(galContent);
+
+    photoFragment.appendChild(galleryItem);
 });
 
+photoGallery.appendChild(photoFragment);
 
+var modalTitle = document.getElementById('modalTitle');
+modalTitle.innerText = projects[string].Name;
+
+var modalDescription = document.getElementById('modalDescription');
+modalDescription.innerText = projects[string].Description;
+
+var modalLanguages = document.getElementById('modalLanguages');
+modalLanguages.innerText = "Langauges: " + projects[string].Languages;
+
+var modalDatabase = document.getElementById('modalDatabase');
+modalDatabase.innerText = "Database: " + projects[string].DataBase;
+
+var modalDesign = document.getElementById('modalDesign');
+modalDesign.innerText = "Design: " + projects[string].Design;
+
+
+
+
+}
 // var skills = document.getElementById("SkillGrid");
 // var fragment = document.createDocumentFragment();
 // tags.forEach(element => {

@@ -265,31 +265,31 @@
             <div class="columns is-multiline is-centered">
 
                 <div class="column is-one-third is-full-mobile">
-                    <div class="gallery-item modal-button" data-target="modal-fadeInScale-fs">
+                    <div class="gallery-item modal-button" data-target="modal-fadeInScale-fs" onclick="openModal('0')" >
                         <img class="gallery-image" src="images/portfolio/sportslock/slOne.png" alt="SportsLock">
                     </div>
                 </div>
 
                 <div class="column is-one-third is-full-mobile">
-                    <div class="gallery-item">
+                    <div class="gallery-item modal-button" data-target="modal-fadeInScale-fs" onclick="openModal('1')">
                         <img class="gallery-image" src="images/portfolio/monologues/mOne.png" alt="Monologues">
                     </div>
                 </div>
 
                 <div class="column is-one-third is-full-mobile">
-                    <div class="gallery-item">
+                    <div class="gallery-item modal-button" data-target="modal-fadeInScale-fs" onclick="openModal('2')">
                         <img class="gallery-image" src="images/portfolio/rhythmrain/GameOne.png" alt="RhythmRain">
                     </div>
                 </div>
 
                 <div class="column is-one-third is-full-mobile">
-                    <div class="gallery-item">
+                    <div class="gallery-item modal-button" data-target="modal-fadeInScale-fs" onclick="openModal('3')">
                         <img class="gallery-image" src="images/portfolio/viewchicago/vcOne.png" alt="ViewChicago">
                     </div>
                 </div>
 
                 <div class="column is-one-third is-full-mobile">
-                    <div class="gallery-item">
+                    <div class="gallery-item modal-button" data-target="modal-fadeInScale-fs" onclick="openModal('4')">
                         <img class="gallery-image" src="images/portfolio/marksramek/msOne.png" alt="Sramek">
                     </div>
                 </div>
@@ -302,54 +302,37 @@
 
         <div id="modal-fadeInScale-fs" class="modal modal-full-screen modal-fx-fadeInScale">
             <div class="modal-content modal-card">
-                <header class="modal-card-head">
-                    <p class="modal-card-title">SportsLock</p>
+                <header class="modal-card-head modal-button-close">
+                    <p class="modal-card-title"></p>
                     <button class="modal-button-close delete" aria-label="close"></button>
                 </header>
                 <section class="modal-card-body">
                     <div class="container">
-                        <div class="columns is-multiline is-centered ">
-                            <div class="column is-one-third is-full-mobile">
-                                <div class="gallery-item">
-                                    <img class="gallery-image" src="images/portfolio/sportslock/slOne.png"
-                                        alt="Monologues">
-                                </div>
-                            </div>
-
-                            <div class="column is-one-third is-full-mobile">
-                                <div class="gallery-item">
-                                    <img class="gallery-image" src="images/portfolio/sportslock/slTwo.png"
-                                        alt="RhythmRain">
-                                </div>
-                            </div>
-
-                            <div class="column is-one-third is-full-mobile">
-                                <div class="gallery-item">
-                                    <img class="gallery-image" src="images/portfolio/sportslock/slThree.png"
-                                        alt="ViewChicago">
-                                </div>
-                            </div>
-
-                            <div class="column is-one-third is-full-mobile">
-                                <div class="gallery-item">
-                                    <img class="gallery-image" src="images/portfolio/sportslock/slFour.png"
-                                        alt="Sramek">
-                                </div>
-                            </div>
+                        <div id="blueimp-gallery" class="blueimp-gallery">
+                            <div class="slides"></div>
+                            <h3 class="title"></h3>
+                            <a class="prev">‹</a>
+                            <a class="next">›</a>
+                            <a class="close">×</a>
+                            <a class="play-pause"></a>
+                            <ol class="indicator"></ol>
                         </div>
-                        <h1 class="title section-title is-2 has-text-centered has-text-weight-normal ">
-                            SportsLock
+                        <div id="photoGallery" class="columns is-multiline  is-centered">
+                        </div>
+                    </div>
+                        <h1 id="modalTitle" class="title section-title is-2 has-text-centered has-text-weight-normal has-padding-top-50 ">
+                            
                         </h1>
-                        <p class="is-size-5 has-text-centered">
-                            A new take on daily fantasy sports. Xamarin Android application built for a Chicago Startup
+                        <p id="modalDescription" class="is-size-5 has-text-centered has-padding-bottom-50">
+                            
                         </p>
-                        <p class="is-size-5  has-text-centered">
+                        <p id="modalLanguages" class="is-size-5  has-text-centered">
                             Language: Xamarin C#
                         </p>
-                        <p class="is-size-5 has-text-centered">
+                        <p id="modalDatabase" class="is-size-5 has-text-centered">
                             Database: Azure SQL
                         </p>
-                        <p class="is-size-5 has-text-centered">
+                        <p id="modalDesign" class="is-size-5 has-text-centered">
                             Design: XAML Sketch
                         </p>
                     </div>
